@@ -14,7 +14,7 @@ export default function PizzaGame() {
   const [items, setItems] = useState<{ id: number; x: number; y: number; type: string }[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
   const playerX = useRef(50); // percentage 0-100
-  const requestRef = useRef<number>();
+  const requestRef = useRef<number | null>(null);
   const lastSpawnRef = useRef<number>(0);
 
   const toppingImages = [

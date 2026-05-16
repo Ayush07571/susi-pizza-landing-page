@@ -75,7 +75,7 @@ export default function InteractiveMenu() {
                         animate={{ opacity: 1, scale: 0.3, y: 0, rotate: pos.rotate }}
                         exit={{ opacity: 0, scale: 0.5, y: 50, rotate: pos.rotate + 45 }}
                         transition={{ 
-                          type: "spring", 
+                          type: "spring" as const, 
                           stiffness: 200, 
                           damping: 20,
                           delay: i * 0.1 

@@ -187,7 +187,7 @@ export default function LuxuryMenu() {
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            transition={{ type: "spring" as const, damping: 25, stiffness: 200 }}
             className="fixed bottom-0 left-0 w-full z-100 bg-[#0a0a0a] border-t border-[#D85A30]/30 rounded-t-[32px] p-6 shadow-[0_-20px_50px_rgba(0,0,0,0.8)] md:hidden"
           >
             <div className="w-12 h-1.5 bg-white/20 rounded-full mx-auto mb-6" />

@@ -11,9 +11,11 @@ extend({ LiquidShaderMaterial });
 
 // TypeScript declaration for JSX to recognize the extended material
 declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      liquidShaderMaterial: any;
+  namespace React {
+    namespace JSX {
+      interface IntrinsicElements {
+        liquidShaderMaterial: any;
+      }
     }
   }
 }
