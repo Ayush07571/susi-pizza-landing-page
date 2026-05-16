@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Susi's Universe 🍕
 
-## Getting Started
+A cinematic, scroll-driven Next.js website for Susi Pizza, a real local pizza brand in Ranchi, Jharkhand, India. 
+Built using Next.js 14, React Three Fiber, Three.js, GSAP, Lenis, Framer Motion, and Zustand.
 
-First, run the development server:
+## Tech Stack
+- **Framework**: Next.js 14+ (App Router, TypeScript)
+- **Styling**: Tailwind CSS
+- **3D Graphics**: React Three Fiber, Drei, Three.js (GLSL Shaders)
+- **Animation**: GSAP (ScrollTrigger), Framer Motion
+- **Scrolling**: Lenis
+- **State Management**: Zustand
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Quick Start
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment to Vercel
 
-## Learn More
+This project is fully optimized for Vercel deployment.
+1. Push your code to a GitHub repository.
+2. Go to [Vercel](https://vercel.com) and log in.
+3. Click **Add New** > **Project** and import your GitHub repository.
+4. Leave the default settings (Next.js framework) and click **Deploy**.
+5. Once complete, your project will be live!
 
-To learn more about Next.js, take a look at the following resources:
+## Image Replacement Guide
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+For the initial build, we generated SVG placeholders for all the visual assets to ensure the project runs seamlessly while waiting for the real production photos.
+When you are ready to replace them, simply drop your real image files (matching the exact filename and correct extension) into the `public/images/` directory.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Note:** The current placeholders use the `.svg` extension for best browser compatibility. Once you replace them, make sure to update the extensions in `lib/constants.ts` and the `src/` prop in your `<Image>` components to match `.jpg` or `.png`.
 
-## Deploy on Vercel
+| Filename | Description / What to replace with |
+|----------|------------------------------------|
+| `logo-dark.svg` | Real Susi Pizza logo files (Dark variant) |
+| `logo-light.svg` | Real Susi Pizza logo files (Light variant) |
+| `entrance-hero-bg.svg` | Real restaurant interior photo |
+| `flour-texture.svg` | Flour particle texture |
+| `pizza-hero.svg` | Real product photo of signature pizza |
+| `topping-babycorn.svg` | Real close-up photo of Baby Corn |
+| `topping-paneer.svg` | Real close-up photo of Paneer |
+| `topping-mushroom.svg` | Real close-up photo of Mushroom |
+| `topping-capsicum.svg` | Real close-up photo of Capsicum |
+| `topping-tomato.svg` | Real close-up photo of Tomato |
+| `topping-cheese.svg` | Real close-up photo of Cheese Pull |
+| `space-bg.svg` | Deep space background (or keep placeholder) |
+| `cheese-drip-texture.svg` | Real macro cheese photo for GLSL shader |
+| `station-dough.svg` | Real station photo (Dough station) |
+| `station-sauce.svg` | Real station photo (Sauce station) |
+| `station-oven.svg` | Real station photo (Oven station) |
+| `kitchen-bg.svg` | Real kitchen panorama photo |
+| `menu-pizza-base.svg` | Real top-down pizza base photo |
+| `menu-panel-bg.svg` | Menu panel background (or keep placeholder) |
+| `price-tag.svg` | Price tag UI element (or keep placeholder) |
+| `ranchi-map-stylised.svg` | Stylised map of Ranchi (or keep placeholder) |
+| `outlet-harmu.svg` | Real photo of the Harmu outlet |
+| `outlet-lalpur.svg` | Real photo of the Lalpur outlet |
+| `footer-dust.svg` | Flour dust particles for footer animation |
+| `og-image.svg` | Final branded Open Graph social share image |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Architecture Notes
+- The application automatically switches between a robust 3D environment for Desktop and Tablet, and an optimized 2D fallback for Mobile using the custom `useDeviceDetect` hook.
+- Ensure all 3D Canvas components remain wrapped in `next/dynamic` with `{ ssr: false }` to prevent hydration mismatches.
