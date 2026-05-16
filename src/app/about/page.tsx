@@ -17,7 +17,7 @@ export default function AboutPage() {
             src="/images/kitchen-bg.png" 
             alt="The Kitchen" 
             fill 
-            className="object-cover opacity-40 grayscale" 
+            className="object-cover opacity-40 md:grayscale" 
             unoptimized 
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-transparent to-[#050505]" />
@@ -65,7 +65,7 @@ export default function AboutPage() {
               <div className="space-y-4">
                  <h4 className="text-[#F5F0E8] font-serif text-xl">Bespoke Cakes</h4>
                  <p>Every cake is a custom creation. From our 1lb Blueberry delights to the rich Belgian Choco Truffle, we use 54% dark chocolate ganache and moist sponges baked fresh for every order.</p>
-                 <div className="relative aspect-video w-full rounded-xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 border border-[#222]">
+                 <div className="relative aspect-video w-full rounded-xl overflow-hidden md:grayscale md:hover:grayscale-0 transition-all duration-700 border border-[#222]">
                    <Image src="/images/menu-cake.jpg" alt="Susi Cakes" fill className="object-cover" unoptimized />
                  </div>
               </div>
@@ -73,7 +73,7 @@ export default function AboutPage() {
               <div className="space-y-4">
                  <h4 className="text-[#F5F0E8] font-serif text-xl">Gourmet Burgers</h4>
                  <p>Our Pizza Burger isn't just a snack—it's a signature fusion. We combine the soul of our pizza toppings with the heart of a smashed patty to create Ranchi's most unique burger experience.</p>
-                 <div className="relative aspect-video w-full rounded-xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 border border-[#222]">
+                 <div className="relative aspect-video w-full rounded-xl overflow-hidden md:grayscale md:hover:grayscale-0 transition-all duration-700 border border-[#222]">
                    <Image src="/images/menu-burger.jpg" alt="Susi Burgers" fill className="object-cover" unoptimized />
                  </div>
               </div>
@@ -89,7 +89,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="relative aspect-video w-full rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 border border-[#222]">
+          <div className="relative aspect-video w-full rounded-2xl overflow-hidden md:grayscale md:hover:grayscale-0 transition-all duration-1000 border border-[#222]">
             <Image 
               src="/images/pizza-hero.png" 
               alt="Artisanal Pizza" 
