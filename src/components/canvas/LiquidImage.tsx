@@ -28,7 +28,8 @@ function Scene({ src }: { src: string }) {
   const { viewport } = useThree();
 
   // Calculate the aspect ratio scale to ensure 'object-cover' behavior
-  const imageAspect = texture.image ? texture.image.width / texture.image.height : 1;
+  const img = texture.image as any;
+  const imageAspect = img ? img.width / img.height : 1;
   const viewportAspect = viewport.width / viewport.height;
   
   let scaleX = 1;
