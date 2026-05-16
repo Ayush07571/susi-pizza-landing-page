@@ -39,11 +39,11 @@ export default function LuxuryMenu() {
   const [activeItem, setActiveItem] = useState<(typeof MENU_DATA)['Pizzas'][0] | null>(null);
 
   useEffect(() => {
-    const isDesktop = window.innerWidth >= 768;
-    if (isDesktop && !activeItem) {
+    // Only set a default item on desktop once on mount
+    if (typeof window !== 'undefined' && window.innerWidth >= 768) {
       setActiveItem(MENU_DATA['Pizzas'][0]);
     }
-  }, [activeItem]);
+  }, []);
 
   const handleCategoryChange = (cat: keyof typeof MENU_DATA) => {
     setActiveCategory(cat);
